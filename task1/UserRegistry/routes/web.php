@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users', 'UsersController@index')->name('users.index');
+Route::post('/users', 'UsersController@store')->name('users.store');
+Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy');
